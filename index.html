@@ -94,7 +94,7 @@
                       link.addEventListener(
                         'click', 
                         function() { 
-                          fbq('track', 'GoingToPlayStore')
+                          fbq('trackCustom', 'GoingToPlayStore', { from: 'githubLandingPage' });
                         },
                         false
                       );
