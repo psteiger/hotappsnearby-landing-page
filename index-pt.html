@@ -1,0 +1,121 @@
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>Hot Apps Nearby</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" type="text/css"/>
+    <meta name="description" content="* Completamente anônimo e privado - não exige autenticação!
+
+* Descubra novos apps populares na sua região
+
+* Instale apps descobertos diretamente da Play Store "/>
+    <meta name="keywords" content="Hot Apps Nearby,Discover,Popular,Apps,in,Your,Region"/>
+    <meta name="og:locale" property="og:locale" content="en_US"/>
+    <meta name="og:type" property="og:type" content="website"/>
+    <meta name="og:site_name" property="og:site_name" content="Hot Apps Nearby"/>
+    <meta name="og:title" property="og:title" content="Hot Apps Nearby"/>
+    <meta name="og:description" property="og:description" content="Discover Popular Apps in Your Region"/>
+    <meta name="og:image" property="og:image" content="https://s3-us-west-2.amazonaws.com/skygear-cloud-asset/appsite/56c87ca5-16d7-48f7-b774-67585b7f0ce3-ic_launcher.png"/><meta name="og:image:type" property="og:image:type" content="image/png"/>
+    <meta name="og:image:width" property="og:image:width" content="1024"/>
+    <meta name="og:image:height" property="og:image:height" content="1024"/>
+    <link rel="stylesheet" href="template/main.min.css"/>
+    
+    <!-- Facebook Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '266119607189145'); // Insert your pixel ID here.
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=266119607189145&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- DO NOT MODIFY -->
+    <!-- End Facebook Pixel Code -->
+  </head>
+  <body>
+    <div>
+      <div class="dark">
+        <div class="blurred-cover" style="background-image:url(ccf3bd45-5b0f-42f6-a899-01040fe39388-screenshot.png);">
+        </div>
+      </div>
+      <div class="white-background">
+      </div>
+      <main id="main">
+        <section class="hero">
+          <div class="app-container fill">
+            <div class="row">
+              <div class="col-sm-6 col-xs-12 fill flex-box left">
+                <div class="phone-container">
+                  <img src="template/phoneframe.png" class="frame-image"/>
+                  <div id="carousel" class="carousel fade" data-ride="carousel">
+                    <div class="carousel-inner"><div class="item active">
+                      <img src="ccf3bd45-5b0f-42f6-a899-01040fe39388-screenshot.png" alt="ccf3bd45-5b0f-42f6-a899-01040fe39388-screenshot.png"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-xs-12 fill flex-box right">
+                <div class="app-content">
+                  <h2 class="app-name app-field">Hot Apps Nearby - Apps Populares ao Redor</h2>
+
+                  <h1 class="tag-line app-field">Descubra Novos Apps Populares na sua Região</h1>
+                  <div class="description app-field">
+                    <p>* Completamente anônimo e privado - não precisa autenticar</p>
+                    <p>* Instale apps descobertos diretamente da loja da Google, a Play Store </p>
+                    <p>* 100% Gratuito</p>
+                  </div>
+                  <div>
+                    <a class="app-link" id="googleLink" href="https://play.google.com/store/apps/details?id=nearby.apps.hot.popular.com.hotappsnearby">
+                      <img class="app-icon" src="template/badgegoogleplay.png"/>
+                    </a>
+                    <!-- Facebook Pixel Code -->
+                    <script>
+                    fbq('track', 'ViewContent', {
+                      content_name: 'LandingPagePt',
+                      content_category: 'HotAppsNearby',
+                      content_ids: ['2'],
+                      content_type: 'product',
+                      value: 0.00,
+                      currency: 'USD'
+                     });
+                    </script>
+                    <!-- End Facebook Pixel Code -->
+                    <!-- Add Pixel Events to the button's click handler -->
+                    <script type="text/javascript">
+                      var link = document.getElementById('googleLink');
+                      link.addEventListener(
+                        'click', 
+                        function() { 
+                          fbq('trackCustom', 'GoingToPlayStore', { from: 'githubLandingPagePt' });
+                        },
+                        false
+                      );
+                    </script>
+                  </div>
+                </div>
+                <footer class="footer">
+                  <div class="container">
+                    <div class="row">
+                      <strong style="padding-right:22px;">Hot Apps Nearby</strong>
+                      <a class="footer-link" href="mailto:psteiger@gmail.com">Contact Us</a>
+                    </div>
+                  </div>
+                </footer>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <div>
+      <script src="template/main.min.js"></script>
+    </div>
+  </body>
+</html>
