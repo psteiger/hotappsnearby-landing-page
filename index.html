@@ -104,6 +104,7 @@
                         'click', 
                         function() { 
                           fbq('trackCustom', 'GoingToPlayStore', { from: 'githubLandingPage' });
+                          ga('send', 'event', 'button', 'clicked', 'Go to Play Store');
                         },
                         false
                       );
