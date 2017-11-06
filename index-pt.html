@@ -37,6 +37,15 @@
     /></noscript>
     <!-- DO NOT MODIFY -->
     <!-- End Facebook Pixel Code -->
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109209398-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-109209398-1');
+    </script>
   </head>
   <body>
     <div>
@@ -71,10 +80,7 @@
                     <p>* Instale apps descobertos diretamente da loja da Google, a Play Store </p>
                     <p>* 100% Gratuito</p>
                   </div>
-                  <div>
-                    <a class="app-link" id="googleLink" href="https://play.google.com/store/apps/details?id=nearby.apps.hot.popular.com.hotappsnearby">
-                      <img class="app-icon" src="template/badgegoogleplay.png"/>
-                    </a>
+                  <div>   
                     <!-- Facebook Pixel Code -->
                     <script>
                     fbq('track', 'ViewContent', {
@@ -87,13 +93,22 @@
                      });
                     </script>
                     <!-- End Facebook Pixel Code -->
+                    
+                    <a class="app-link" id="googleLink" href="https://play.google.com/store/apps/details?id=nearby.apps.hot.popular.com.hotappsnearby&referrer=utm_source%3Ddownload.hotappsnearby.pt%26utm_medium%3Dweb">
+                      <img class="app-icon" src="template/badgegoogleplay.png"/>
+                    </a>
+                    
                     <!-- Add Pixel Events to the button's click handler -->
                     <script type="text/javascript">
                       var link = document.getElementById('googleLink');
+                      // Facebook and google!
                       link.addEventListener(
                         'click', 
                         function() { 
                           fbq('trackCustom', 'GoingToPlayStore', { from: 'githubLandingPagePt' });
+                          gtag('event', 'click', {
+                            'event_category': 'GoingToPlayStorePt'
+                          });
                         },
                         false
                       );
