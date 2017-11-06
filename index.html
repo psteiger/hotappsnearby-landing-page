@@ -82,9 +82,7 @@
                     <p>* 100% Free</p>
                   </div>
                   <div>
-                    <a class="app-link" id="googleLink" onclick="fbq('trackCustom', 'GoingToPlayStore', { from: 'githubLandingPage' }); ga('send', 'event', { eventCategory: 'Button', eventAction: 'click', eventLabel: 'Go to Play Store', transport: 'beacon' });" href="https://play.google.com/store/apps/details?id=nearby.apps.hot.popular.com.hotappsnearby">
-                      <img class="app-icon" src="template/badgegoogleplay.png"/>
-                    </a>
+                    
                     <!-- Facebook Pixel Code -->
                     <script>
                     fbq('track', 'ViewContent', {
@@ -98,17 +96,28 @@
                     </script>
                     <!-- End Facebook Pixel Code -->
                     <!-- Add Pixel Events to the button's click handler -->
-                    <!--script type="text/javascript">
+                    <script type="text/javascript">
                       var link = document.getElementById('googleLink');
+                      // Facebook and google!
                       link.addEventListener(
                         'click', 
                         function() { 
                           fbq('trackCustom', 'GoingToPlayStore', { from: 'githubLandingPage' });
+                        },
+                        false
+                      );
+                      link.addEventListener(
+                        'click',
+                        function() {
                           ga('send', 'event', 'button', 'clicked', 'Go to Play Store');
                         },
                         false
                       );
-                    </script-->
+                    </script>
+                  
+                    <a class="app-link" id="googleLink" href="https://play.google.com/store/apps/details?id=nearby.apps.hot.popular.com.hotappsnearby&referrer=utm_source%3Ddownload.hotappsnearby%26utm_medium%3Dweb">
+                      <img class="app-icon" src="template/badgegoogleplay.png"/>
+                    </a>
                   </div>
                 </div>
                 <footer class="footer">
