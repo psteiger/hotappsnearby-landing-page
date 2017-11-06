@@ -82,7 +82,7 @@
                     <p>* 100% Free</p>
                   </div>
                   <div>
-                    <a class="app-link" id="googleLink" href="https://play.google.com/store/apps/details?id=nearby.apps.hot.popular.com.hotappsnearby">
+                    <a class="app-link" id="googleLink" onclick="fbq('trackCustom', 'GoingToPlayStore', { from: 'githubLandingPage' });ga('send', 'event', 'button', 'clicked', 'Go to Play Store');" href="https://play.google.com/store/apps/details?id=nearby.apps.hot.popular.com.hotappsnearby">
                       <img class="app-icon" src="template/badgegoogleplay.png"/>
                     </a>
                     <!-- Facebook Pixel Code -->
@@ -98,7 +98,7 @@
                     </script>
                     <!-- End Facebook Pixel Code -->
                     <!-- Add Pixel Events to the button's click handler -->
-                    <script type="text/javascript">
+                    <!--script type="text/javascript">
                       var link = document.getElementById('googleLink');
                       link.addEventListener(
                         'click', 
@@ -108,7 +108,7 @@
                         },
                         false
                       );
-                    </script>
+                    </script-->
                   </div>
                 </div>
                 <footer class="footer">
