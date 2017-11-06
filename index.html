@@ -103,13 +103,7 @@
                         'click', 
                         function() { 
                           fbq('trackCustom', 'GoingToPlayStore', { from: 'githubLandingPage' });
-                        },
-                        false
-                      );
-                      link.addEventListener(
-                        'click',
-                        function() {
-                          ga('send', 'event', 'button', 'clicked', 'Go to Play Store');
+                          gtag('event', 'view_item');
                         },
                         false
                       );
