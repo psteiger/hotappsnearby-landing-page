@@ -37,11 +37,21 @@
     /></noscript>
     <!-- DO NOT MODIFY -->
     <!-- End Facebook Pixel Code -->
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109209398-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-109209398-1');
+    </script>
   </head>
   <body>
     <div>
       <div class="dark">
-        <div class="blurred-cover" style="background-image:url(ccf3bd45-5b0f-42f6-a899-01040fe39388-screenshot.png);">
+        <div class="blurred-cover" style="background-image:url(screenshot.png);">
         </div>
       </div>
       <div class="white-background">
@@ -55,7 +65,7 @@
                   <img src="template/phoneframe.png" class="frame-image"/>
                   <div id="carousel" class="carousel fade" data-ride="carousel">
                     <div class="carousel-inner"><div class="item active">
-                      <img src="ccf3bd45-5b0f-42f6-a899-01040fe39388-screenshot.png" alt="ccf3bd45-5b0f-42f6-a899-01040fe39388-screenshot.png"/>
+                      <img src="screenshot.png" alt="screenshot.png"/>
                       </div>
                     </div>
                   </div>
@@ -72,9 +82,7 @@
                     <p>* 100% Free</p>
                   </div>
                   <div>
-                    <a class="app-link" id="googleLink" href="https://play.google.com/store/apps/details?id=nearby.apps.hot.popular.com.hotappsnearby">
-                      <img class="app-icon" src="template/badgegoogleplay.png"/>
-                    </a>
+                    
                     <!-- Facebook Pixel Code -->
                     <script>
                     fbq('track', 'ViewContent', {
@@ -87,17 +95,27 @@
                      });
                     </script>
                     <!-- End Facebook Pixel Code -->
+                  
+                    <a class="app-link" id="googleLink" href="https://play.google.com/store/apps/details?id=nearby.apps.hot.popular.com.hotappsnearby&referrer=utm_source%3Ddownload.hotappsnearby%26utm_medium%3Dweb">
+                      <img class="app-icon" src="template/badgegoogleplay.png"/>
+                    </a>
+                    
                     <!-- Add Pixel Events to the button's click handler -->
                     <script type="text/javascript">
                       var link = document.getElementById('googleLink');
+                      // Facebook and google!
                       link.addEventListener(
                         'click', 
                         function() { 
                           fbq('trackCustom', 'GoingToPlayStore', { from: 'githubLandingPage' });
+                          gtag('event', 'click', {
+                            'event_category': 'GoingToPlayStore'
+                          });
                         },
                         false
                       );
                     </script>
+                    
                   </div>
                 </div>
                 <footer class="footer">
