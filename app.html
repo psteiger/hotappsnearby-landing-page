@@ -43,14 +43,15 @@
             x.innerHTML = "Geolocation is not supported by this browser.";
         }
       }
-      
+      var firebaseRef = firebase.database().ref('geofire')
+      var geoFire = new GeoFire(firebaseRef);
       var geoQuery = geoFire.query({
         center: getLocation(),
         radius: 3000
       });
-      firebase.database().ref('geofire').on('child_added', function(snapshot) {
-        document.getElementById("app-list").innerHTML += "<li class=\"list-item\">" + snapshot.val() + "</li>"
-      });
+      //.on('child_added', function(snapshot) {
+      //  document.getElementById("app-list").innerHTML += "<li class=\"list-item\">" + snapshot.val() + "</li>"
+      //});
       
     </script>
   </body>
