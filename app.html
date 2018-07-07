@@ -56,8 +56,29 @@
           center: [position.coords.latitude, position.coords.longitude],
           radius: 3000
         });
+        var appNames = {};
+        var appFreqs = {};
+        var keysEntered = 0;
+        
         geoQuery.on("key_entered", function(key, location) {
-          log(key + " entered the query. Hi " + key + "!");
+          keysEntered++;
+          usersRef.ref(key).once('value').then(function(snapshot) {
+            keysEntered--;
+            snapshot.val().apps.forEach(function(app) {
+              appNames[app.packageName] = app.name;
+              var currentFreq = appFreqs[app.packageName]
+              if (currentFreq != null) {
+                appFreqs[app.packageName] = currentFreq + 1;
+              } else {
+                appFreqs[app.packageName] = 1
+              }
+              if (keysEntered == 0) {
+                appNames.forEach(function(name) {
+                  document.getElementById("app-list").innerHTML += "<li class=\"list-item\">" + name + "</li>";
+                });
+              }
+            });
+          });
         });
         //.on('child_added', function(snapshot) {
         //  document.getElementById("app-list").innerHTML += "<li class=\"list-item\">" + snapshot.val() + "</li>"
