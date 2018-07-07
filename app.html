@@ -38,23 +38,33 @@
       
       function getLocation() {
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
+            navigator.geolocation.getCurrentPosition(setupGeoQuery);
         } else {
-            x.innerHTML = "Geolocation is not supported by this browser.";
+            //x.innerHTML = "Geolocation is not supported by this browser.";
         }
       }
-      var firebaseRef = firebase.database().ref('geofire')
-      var geoFire = new GeoFire(firebaseRef);
-      var geoQuery = geoFire.query({
-        center: getLocation(),
-        radius: 3000
-      });
-      geoQuery.on("key_entered", function(key, location) {
-        log(key + " entered the query. Hi " + key + "!");
-      });
-      //.on('child_added', function(snapshot) {
-      //  document.getElementById("app-list").innerHTML += "<li class=\"list-item\">" + snapshot.val() + "</li>"
-      //});
+      
+      function setupGeoQuery(position) {
+          //x.innerHTML = "Latitude: " + position.coords.latitude + 
+          //"<br>Longitude: " + position.coords.longitude; 
+        var firebaseDb = firebase.database();
+        var geofireRef = firebaseDb.ref('geofire');
+        var usersRef = firebaseDb.ref('users');
+
+        var geoFire = new GeoFire(geofireRef);
+        var geoQuery = geoFire.query({
+          center: position,
+          radius: 3000
+        });
+        geoQuery.on("key_entered", function(key, location) {
+          log(key + " entered the query. Hi " + key + "!");
+        });
+        //.on('child_added', function(snapshot) {
+        //  document.getElementById("app-list").innerHTML += "<li class=\"list-item\">" + snapshot.val() + "</li>"
+        //});
+      }
+
+      getLocation();
       
     </script>
   </body>
