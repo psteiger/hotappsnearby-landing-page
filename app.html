@@ -53,7 +53,7 @@
 
         var geoFire = new GeoFire(geofireRef);
         var geoQuery = geoFire.query({
-          center: position,
+          center: [position.latitude, position.longitude],
           radius: 3000
         });
         geoQuery.on("key_entered", function(key, location) {
