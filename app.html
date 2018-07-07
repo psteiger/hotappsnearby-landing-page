@@ -82,7 +82,7 @@
               Object.keys(appFreqs || {}).sort(function(a,b){return appFreqs[b]-appFreqs[a]}).forEach(function (key) {
                 var name = appNames[key];
                 var freq = appFreqs[key];
-                document.getElementById("app-list").innerHTML += "<li id=\"" + key + "\" class=\"list-group-item\">" + name + " " + freq + " users</li>";
+                document.getElementById("app-list").innerHTML += "<li id=\"" + key + "\" class=\"list-group-item\"><div><img src=\"https://us-central1-hot-apps-nearby.cloudfunctions.net/getIconUrl?pkg=" + key + "\">" + name + " " + freq + " users</div></li>";
               });
             }
           });
