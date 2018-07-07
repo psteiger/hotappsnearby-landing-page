@@ -63,7 +63,6 @@
         geoQuery.on("key_entered", function(key, location) {
           keysEntered++;
           usersRef.child(key).once('value').then(function(snapshot) {
-            keysEntered--;
             var user = snapshot.val();
             if (user != null) {
               var apps = user.apps;
@@ -79,7 +78,7 @@
                 });
               }
             }
-            if (keysEntered == 0) {
+            if (--keysEntered == 0) {
               Object.keys(appNames || {}).forEach(function (key) {
                 var name = appNames[key];
                 document.getElementById("app-list").innerHTML += "<li class=\"list-item\">" + name + "</li>";
