@@ -62,7 +62,7 @@
         
         geoQuery.on("key_entered", function(key, location) {
           keysEntered++;
-          usersRef.ref(key).once('value').then(function(snapshot) {
+          usersRef.child(key).once('value').then(function(snapshot) {
             keysEntered--;
             snapshot.val().apps.forEach(function(app) {
               appNames[app.packageName] = app.name;
