@@ -24,9 +24,10 @@
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-functions.js"></script>
+    <script src="https://cdn.firebase.com/libs/geofire/4.1.2/geofire.min.js"></script>
+
     <script>
       // Initialize Firebase
-      // TODO: Replace with your project's customized code snippet
       var config = {
         apiKey: "AIzaSyAXduJVM-yJKrIR0sT3F4tuJLnkYAelAKo",
         authDomain: "hot-apps-nearby.firebaseapp.com",
@@ -34,6 +35,19 @@
         storageBucket: "hot-apps-nearby.appspot.com",
       };
       firebase.initializeApp(config);
+      
+      function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+      }
+      
+      var geoQuery = geoFire.query({
+        center: getLocation(),
+        radius: 3000
+      });
       firebase.database().ref('geofire').on('child_added', function(snapshot) {
         document.getElementById("app-list").innerHTML += "<li class=\"list-item\">" + snapshot.val() + "</li>"
       });
