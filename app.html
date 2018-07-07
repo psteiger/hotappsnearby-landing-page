@@ -79,7 +79,7 @@
               }
             }
             if (--keysEntered == 0) {
-              Object.keys(appFreqs || {}).sort(function(a,b){return appFreqs[a]-appFreqs[b]}).forEach(function (key) {
+              Object.keys(appFreqs || {}).sort(function(a,b){return appFreqs[b]-appFreqs[a]}).forEach(function (key) {
                 var name = appNames[key];
                 var freq = appFreqs[key];
                 document.getElementById("app-list").innerHTML += "<li class=\"list-item\">" + name + " " + freq + " users</li>";
