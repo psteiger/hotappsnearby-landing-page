@@ -77,7 +77,8 @@
                     appFreqs[app.packageName] = 1;
                   }
                   if (keysEntered == 0) {
-                    appNames.values().forEach(function(name) {
+                    Object.keys(appNames || {}).forEach(function (key) {
+                      var name = appNames[key];
                       document.getElementById("app-list").innerHTML += "<li class=\"list-item\">" + name + "</li>";
                     });
                   }
