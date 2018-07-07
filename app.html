@@ -64,6 +64,7 @@
           keysEntered++;
           usersRef.child(key).once('value').then(function(snapshot) {
             keysEntered--;
+            console.log(snapshot.val());
             snapshot.val().apps.forEach(function(app) {
               appNames[app.packageName] = app.name;
               var currentFreq = appFreqs[app.packageName];
