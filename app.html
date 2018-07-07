@@ -79,10 +79,12 @@
               }
             }
             if (--keysEntered == 0) {
-              Object.keys(appNames || {}).forEach(function (key) {
+              Object.keys(appFreqs || {}).sort(function(a,b){return appFreqs[a]-appFreqs[b]}).forEach(function (key) {
                 var name = appNames[key];
-                document.getElementById("app-list").innerHTML += "<li class=\"list-item\">" + name + "</li>";
+                var freq = appFreqs[key];
+                document.getElementById("app-list").innerHTML += "<li class=\"list-item\">" + name + " " + freq + " users</li>";
               });
+              Object.keys(appNames || {}).forEach(
             }
           });
         });
