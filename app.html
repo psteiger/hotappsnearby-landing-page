@@ -66,11 +66,11 @@
             keysEntered--;
             snapshot.val().apps.forEach(function(app) {
               appNames[app.packageName] = app.name;
-              var currentFreq = appFreqs[app.packageName]
+              var currentFreq = appFreqs[app.packageName];
               if (currentFreq != null) {
                 appFreqs[app.packageName] = currentFreq + 1;
               } else {
-                appFreqs[app.packageName] = 1
+                appFreqs[app.packageName] = 1;
               }
               if (keysEntered == 0) {
                 appNames.forEach(function(name) {
