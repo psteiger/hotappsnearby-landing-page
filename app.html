@@ -49,6 +49,9 @@
         center: getLocation(),
         radius: 3000
       });
+      geoQuery.on("key_entered", function(key, location) {
+        log(key + " entered the query. Hi " + key + "!");
+      });
       //.on('child_added', function(snapshot) {
       //  document.getElementById("app-list").innerHTML += "<li class=\"list-item\">" + snapshot.val() + "</li>"
       //});
