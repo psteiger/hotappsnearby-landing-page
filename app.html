@@ -76,14 +76,14 @@
                   } else {
                     appFreqs[app.packageName] = 1;
                   }
-                  if (keysEntered == 0) {
-                    Object.keys(appNames || {}).forEach(function (key) {
-                      var name = appNames[key];
-                      document.getElementById("app-list").innerHTML += "<li class=\"list-item\">" + name + "</li>";
-                    });
-                  }
                 });
               }
+            }
+            if (keysEntered == 0) {
+              Object.keys(appNames || {}).forEach(function (key) {
+                var name = appNames[key];
+                document.getElementById("app-list").innerHTML += "<li class=\"list-item\">" + name + "</li>";
+              });
             }
           });
         });
